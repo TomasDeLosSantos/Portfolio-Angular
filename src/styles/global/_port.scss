@@ -1,0 +1,194 @@
+.port{
+    @include flex__config(column, start, start);
+    max-width: 1320px;
+    margin: auto;   
+    border-top: 1px solid $grey;
+    padding: 5rem 0;
+
+    &__title{
+        font-size: 2rem;
+        color: $white
+    }
+}
+
+.card{
+    display: block;
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    padding-top: 5rem;
+    max-width: 1320px;
+    margin: 0 auto;
+    //background-color: #0086ff;
+    &__row{
+        @include flex__config(row,center,center);
+        flex-wrap: wrap;
+    }
+    &__add{
+        @include flex__config(column, center, center);
+        height: 80px;
+        width: 280px;
+        margin: auto;
+        position: relative;
+        &::after{
+            content: '';
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            background-color: rgba($color: #8a2be2, $alpha: 1);
+            border-radius: 100%;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+    }
+    &-s{
+        &__cont{
+            position: relative;
+            height: 400px;
+            width: 280px;
+            margin: 1rem;
+            //border-radius: 30px;
+            //box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
+            box-shadow: 10px 10px $acc1;
+            @include flex__config(column, end, end);
+            overflow: hidden;
+            &::after{
+                content: '';
+                width: 60px;
+                height: 60px;
+                background-color: rgba($color: $acc1, $alpha: 1);
+                border-radius: 100%;
+                position: absolute;
+                bottom: 2rem;
+                right: 1rem;
+                z-index: 2;
+                transition: all 0.5s ease;
+            }
+            &:hover{
+                .card-s__para{
+                    visibility: visible;
+                }
+                .card-s__btn{
+                    visibility: visible;
+                }
+                .card-s__img{
+                    filter: grayscale(0);
+                }
+                .fa{
+                    &-html5{
+                        color: #F06529;
+                    }
+                    &-css3-alt{
+                        color: #264DE4;
+                    }
+                    &-bootstrap{
+                        color: #563D7C;
+                    }
+                    &-js{
+                        color: #F0DB4F;
+                    }
+                    &-angular{
+                        color: #DD1B16;
+                    }
+                }
+                &::after{
+                    transform: scale(15);
+                    background-color: rgba($color: $acc1, $alpha: 0);;
+                }
+            }
+            transition: all 1s;
+        }
+        &__title{
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+            text-align: end;
+            padding-right: 0.8rem;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+        &__sub{
+            color: #fff;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            padding-top: 0.5rem;
+            text-align: end;
+            padding-right: 0.8rem;
+            z-index: 10;
+        }
+        &__para{
+            color: #fff;
+            font-size: 1rem;
+            margin-left: 1rem;
+            text-align: end;
+            //max-width: 50%;
+            visibility: hidden;
+            padding-right: 0.8rem;
+            z-index: 10;
+            transition: visibility-visible 0.5s ease;
+        }
+        &__img{
+            position: absolute;
+            object-fit: cover;
+            margin: 0;
+            padding: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            //border-radius: 30px;
+            filter: grayscale(100%);
+        }
+        &__btn{
+            background-color: $acc1;
+            color: #fff;
+            padding: 0.1rem 0.5rem;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            visibility: hidden;
+            margin-top: 0.8rem;
+            margin-right: 0.8rem;
+            z-index: 10;
+            transition: visibility-visible 0.5s ease;
+        }
+    }
+    
+    &__bg{
+        background-color: #0086ff;
+    }
+}
+
+.flex__row{
+    @include flex__config(row, center, center);
+    margin: auto; 
+}
+
+.flex__col{
+    @include flex__config(column, center, center);
+}
+
+.fa{
+    &-brands{
+        transition: all 0.2s;
+    }
+    &-plus{
+        color: #fff;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+    }
+    &-arrow-up-right{
+        color: #fff;
+    }
+}
+.dark{
+    color: #000;
+}
